@@ -51,7 +51,6 @@ client.on('message',async  (msg) => {
       //Ban/Kick
 	
 	//Comandos Por Dark
-	bot.on('message', message => {
             if (message.content.startsWith('!ping')){
                 message.channel.send('!pong');
             }
