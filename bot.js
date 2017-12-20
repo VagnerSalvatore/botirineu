@@ -53,12 +53,6 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
                 
                 }
 
-client.on(`message`, message => {
-    if (message.content === "!ban") {
-      
-    }
-  });
-
   client.on(`message`, message => {
     if (message.content === "!kick") {
       let modRole = message.guild.roles.find("name", "Moderators");
