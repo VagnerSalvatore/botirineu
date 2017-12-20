@@ -49,17 +49,5 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 
 }
                  
-             client.on("message", (message) => {
-    if(message.member.roles.has(role.id) && message.content.startsWith("!kick")) {
-        
-        let message.mentions.members.first();
-        .kick(reason)
-            // Successmessage
-            message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
-        }).catch(() => {
-             // Failmessage
-            message.channel.send("Access Denied");
-        });
-    }
-});
+ 
 });
