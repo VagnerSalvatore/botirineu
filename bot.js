@@ -30,7 +30,11 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                    
                    }     
                    
-
+                  if (message.content.startsWith('!cpf')){
+                   await message.author.send("I've just banned you!")       
+                   
+                
+                
 
 let role = message.guild.roles.find("name", "Admin");
 if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
