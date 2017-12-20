@@ -64,7 +64,7 @@ exports.run = async (client, msg, args) => {
     let ball = answerBall.magic.answer;
     msg.channel.send('**[8 Ball]** :crystal_ball: ' + ball);
 };
-
+}
 
                                 
                 
