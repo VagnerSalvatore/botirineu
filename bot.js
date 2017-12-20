@@ -48,9 +48,8 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
     message.channel.fetchMessages({limit: numberMessages}).then(messages => message.channel.bulkDelete(messages));
 
 }
-                
-                if(message.content.startsWith("kick")){
-    let role = message.guild.roles.find("name", "Admin");
+                 let role = message.guild.roles.find("name", "Admin");
+                if(message.content.startsWith("!kick")){
     return message.reply("Sorry, you don't have permissions to use this!"); 
 } 
               
