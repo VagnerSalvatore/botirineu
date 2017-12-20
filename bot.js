@@ -50,20 +50,20 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 }
                  let role = message.guild.roles.find("name", "Admin");
                if(message.member.roles.has(role.id) && message.content.startsWith("!kick")){
-    return message.reply("Sorry, you don't have permissions to use this!"); 
+    if message.author.send("Sorry, you don't have permissions to use this!"); 
                  
 // Let's first check if we have a member and if we can kick them!
     // message.mentions.members is a collection of people that have been mentioned, as GuildMembers.
     let member = message.mentions.members.first();
     if(!member)
-      return message.reply("Please mention a valid member of this server");
+      if message.author.send("Please mention a valid member of this server");
     if(!member.kickable) 
-      return message.reply("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
+      if message.author.send("I cannot kick this user! Do they have a higher role? Do I have kick permissions?");
     
     // slice(1) removes the first part, which here should be the user mention!
     let reason = args.slice(1).join(' ');
     if(!reason)
-      return message.reply("Please indicate a reason for the kick!");
+      if message.author.send("Please indicate a reason for the kick!");
     
     // Now, time for a swift kick in the nuts!
     await member.kick(reason)
