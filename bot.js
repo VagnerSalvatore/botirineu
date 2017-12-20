@@ -53,8 +53,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
     if(message.member.roles.has(role.id) && message.content.startsWith("!kick")) {
         
         let message.mentions.members.first();
-        // Kick
-        member.kick().then((member) => {
+        .kick(reason)
             // Successmessage
             message.channel.send(":wave: " + member.displayName + " has been successfully kicked :point_right: ");
         }).catch(() => {
