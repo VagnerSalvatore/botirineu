@@ -49,10 +49,6 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 
 }
                 
-if (message.content.startsWith('!ban')){
-if(msg.member.permissions.has('ADMINISTRADOR')) return msg.reply('Sem Permissão');
-
-}
 
 
 });
