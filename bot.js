@@ -11,7 +11,7 @@ client.on('ready', () => {
 client.on('message',async  (msg) => {
     var is_PM = msg.channel.type == "dm";
     var message = msg;
-    if(is_PM && msg.author.id != "393109624078860298"){
+    if(is_PM && msg.author.id != "392794103772872715"){
         return msg.reply("**Sem mensagens no privado!**.");
     }
 
@@ -30,7 +30,7 @@ client.on('message',async  (msg) => {
 
     //Ban/Kick
     if(cmd == ".ban") {
-        let modRole = msg.guild.roles.find("name", "FUNDADOR");
+        let modRole = msg.guild.roles.find("name", "DONO");
         if(msg.member.roles.has(modRole.id)) { 
           let banMember = msg.guild.member(msg.mentions.users.first());
           msg.guild.member(banMember).ban();
@@ -41,7 +41,7 @@ client.on('message',async  (msg) => {
       }
 
       if(cmd == ".kick") {
-        let modRole = msg.guild.roles.find("name", "FUNDADOR");
+        let modRole = msg.guild.roles.find("name", "DONO");
         if(msg.member.roles.has(modRole.id)) { 
           let banMember = msg.guild.member(msg.mentions.users.first());
           msg.guild.member(banMember).kick();
@@ -53,4 +53,4 @@ client.on('message',async  (msg) => {
       //Ban/Kick
 	  
 });
-client.login('MzkzMTA5NjI0MDc4ODYwMjk4.DRxF9A.IHZeIrGJkQzCAQ5kfFC_7UXAnEI'); //Token do seu bot
+client.login('MzkyNzk0MTAzNzcyODcyNzE1.DRxHhQ.sYvrQ3k9sCo_LaUPpPAT4hLTXQk'); //Token do seu bot
