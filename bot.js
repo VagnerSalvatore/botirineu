@@ -50,9 +50,6 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 }
                  
 if (message.content.startsWith('!ball')){
-        /**
- * @member {Object}
- */
 const snekfetch = require('snekfetch');
 
 exports.run = async (client, msg, args) => {
