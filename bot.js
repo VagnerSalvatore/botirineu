@@ -48,23 +48,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
     message.channel.fetchMessages({limit: numberMessages}).then(messages => message.channel.bulkDelete(messages));
 
 }
-                 
-if (message.content.startsWith('!ball')){
-const snekfetch = require('snekfetch');
-
-exports.run = async (client, msg, args) => {
-    if (!args.join(' ')) {
-        return msg.channel.send('Please include a question');
-    }
-    let r = await snekfetch.get('https://8ball.delegator.com/magic/JSON/0');
-    let answerBall = r.body;
-    /**
-     * @param {{magic:object}} The returned Object from API
-     */
-    let ball = answerBall.magic.answer;
-    msg.channel.send('**[8 Ball]** :crystal_ball: ' + ball);
-};
-}
+            
 
                                 
                 
