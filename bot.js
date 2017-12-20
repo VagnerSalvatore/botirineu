@@ -55,8 +55,6 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 
 }
             
-client.user.setPresence({ game: { name: `CCleaner`, type: 0} 
-}
                                 
                 
 });
