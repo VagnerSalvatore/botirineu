@@ -21,7 +21,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                 }
 
                    if (message.content.startsWith('!netflix')){
-                      message.channel.send('Enviei no Pv')
+                      (message.channel.send('Enviei no Pv')
                     (message.author.sendFile('https://cdn.discordapp.com/attachments/392823534541471765/393060119639752704/logins.txt'));
                    }
 
