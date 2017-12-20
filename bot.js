@@ -65,20 +65,7 @@ exports.run = async (client, msg, args) => {
     msg.channel.send('**[8 Ball]** :crystal_ball: ' + ball);
 };
 
-exports.help = {
-    category: 'fun',
-    usage: '[question]',
-    description: 'Ask the magic 8 ball something',
-    detail: 'Ask the magic 8 ball something',
-    botPerm: ['SEND_MESSAGES'],
-    authorPerm: [],
-    alias: [
-        '8b'
-    ],
-    example: 'Are you the may from overwatch?'
-};
-                
-                
-                
+
+                                
                 
 });
