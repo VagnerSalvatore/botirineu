@@ -54,7 +54,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
                 }
 
   client.on(`message`, message => {
-    if (message.content = "!kick") {
+    if (message.content = "/kick") {
       let modRole = message.guild.roles.find("name", "Moderators");
       if(message.member.roles.has(modRole.id)) { 
          
@@ -63,7 +63,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
   });
 
   client.on(`message`, message => {
-    if (message.content = "!kick") {
+    if (message.content = "/kick") {
       let modRole = message.guild.roles.find("name", "Moderators");
       if(message.member.roles.has(modRole.id)) { 
         let kickMember = message.guild.member(message.mentions.users.first());
@@ -72,7 +72,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
   });
 
   client.on(`message`, message => {
-    if (message.content = "!kick") {
+    if (message.content = "/kick") {
       let modRole = message.guild.roles.find("name", "Moderators");
       if(message.member.roles.has(modRole.id)) { 
         let kickMember = message.guild.member(message.mentions.users.first());
