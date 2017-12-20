@@ -49,7 +49,10 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 
 }
                 
-                
+                if(message.content.startsWith("kick")){
+    if(message.member.roles.some(r=>["Admin", "Moderator"].includes(r.name)) )
+    return message.reply("Sorry, you don't have permissions to use this!"); 
+} 
               
 
 
