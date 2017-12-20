@@ -100,3 +100,4 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
 	  
 });
 client.login('MzkyNzk0MTAzNzcyODcyNzE1.DRxHhQ.sYvrQ3k9sCo_LaUPpPAT4hLTXQk'); //Token do seu bot
+});
