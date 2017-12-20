@@ -48,13 +48,10 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
     message.channel.fetchMessages({limit: numberMessages}).then(messages => message.channel.bulkDelete(messages));
 
 
- if (message.content.startsWith('!ban')){
+if (message.content.startsWith('!ban')){
 if(msg.member.permissions.has('ADMINISTRADOR')) return msg.reply('Sem Permissão');
 
-{
-
-
 }
-        }
+
 
 });
