@@ -73,9 +73,9 @@ bot.on('message', message => {
              * Takes a Date object, defaults to current date.
              */
             .setTimestamp()
-            .setURL("https://discord.js.org/#/docs/main/indev/class/RichEmbed")
-            .addField("This is a field title, it can hold 256 characters",
-            "This is a field value, it can hold 2048 characters.")
+            .setURL("https://irineubot.com.br")
+            .addField("Meu Site Oficial",
+            "Clique Para Acessar.")
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
              */
