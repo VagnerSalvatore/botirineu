@@ -4,11 +4,9 @@ const bot = new Discord.Client();
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
              //Status
- bot.on.setStatus('Online')
+ bot.user.setStatus('Online')
                 
- bot.on.setGame('Irineu');
-
-});
+ bot.user.setGame('Irineu');
 
         bot.on('message', message => {
             if (message.content.startsWith('!ping')){
