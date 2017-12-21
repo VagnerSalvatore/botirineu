@@ -14,7 +14,7 @@ bot.on('ready', () => {
 bot.on('message', async (msg) => {
     var is_PM = msg.channel.type == "dm";
     var message = msg;
-    if (is_PM && msg.author.id != "393126227696943105") {
+    if (is_PM && msg.author.id != "") {
         return msg.reply("**Sem mensagens no privado!**.");
     }
 
