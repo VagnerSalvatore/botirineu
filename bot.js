@@ -76,7 +76,7 @@ bot.on('message', message => {
             .setTimestamp()
             .setURL("https://irineubot.com.br")
             .addField("Servidores",
-            "Estou Em Cerca de :")
+            "Estou Em Cerca de :");
             message.channel.send(client.guilds.size)
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
