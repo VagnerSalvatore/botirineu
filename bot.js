@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const newUsers = new Discord.Collection();
+const client = new Discord.Client();
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
@@ -95,7 +95,7 @@ bot.on('message', message => {
 
     }
     const newUsers = new Discord.Collection();
-    bot.on("guildMemberAdd", (member) => {
+    client.on("guildMemberAdd", (member) => {
         const guild = member.guild;
         newUsers.set(member.id, member.user);
 
