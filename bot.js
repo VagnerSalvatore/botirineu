@@ -42,7 +42,7 @@ bot.on('message', message => {
     //Numero de Servidores
      if (message.content.startsWith('!bot')) {
          message.channel.send('Servidores Em Que Estou');
-        message.channel.send(client.guilds.size)
+        message.channel.send(client.guilds.length)
 
         }
     if (message.content.startsWith('!help')) {
