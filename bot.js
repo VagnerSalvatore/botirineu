@@ -10,9 +10,9 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
     console.log('Bot Launched...')
 
-    bot.user.setStatus('Online')
+    bot.on.setStatus('Online')
 
-    bot.user.setGame('Irineu')
+    bot.on.setGame('Irineu')
 }
                     
 
