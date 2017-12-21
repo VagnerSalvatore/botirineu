@@ -111,7 +111,7 @@ bot.on('message', async (msg) => {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
-            msg.guild.member(banMember),!ban();
+            msg.guild.member(banMember).ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
@@ -122,7 +122,7 @@ bot.on('message', async (msg) => {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
-            msg.guild.member(banMember),!kick();
+            msg.guild.member(banMember).kick();
             msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
@@ -130,22 +130,6 @@ bot.on('message', async (msg) => {
     }
     //Ban/Kick
 
-    if (message.content.startsWith('!eval')) {
-        exports.run = (client, message, args) => {
-            if (message.author.id !== '269470460561850395') return message.reply(':x: Sem Permissão!  :face_palm:');
-            try {
-                const code = args.join(" ");
-                let evaled = eval(code);
-
-                if (typeof evaled !== "string")
-                    evaled = require("util").inspect(evaled);
-
-                message.channel.send(evaled, { code: "xl" });
-            } catch (err) {
-                message.channel.send(`\`ERRO\` \`\`\`xl\n${err}\n\`\`\``);
-            }
-        }
-    }
     //Deletando Mensagens
     let role = message.guild.roles.find("name", "DONO");
     if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
