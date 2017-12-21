@@ -68,9 +68,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
    * Blank field, useful to create some space.
    */
   .addBlankField(true)
-  .addField("Irineu", "Você Não Sabe Nem Eu.", true);
-
-  message.channel.send({embed})
+  .addField("Irineu", "Você Não Sabe Nem Eu.", true)
     
 }});
     
