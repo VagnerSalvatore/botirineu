@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 //Algo Que Conecta O Bot
-bot.login('MY SECRET TOKEN');
+bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
 bot.on('message', message => {
     if (message.content.startsWith('!ping')) {
