@@ -114,7 +114,7 @@ bot.on('message', async (msg) => {
             msg.guild.member(banMember),!ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
         } else {
-            return msg.reply("Você não tem **permissão** de **banir** outros **usuários**.");
+            return msg.reply("Sem Permissão! :vindieselpngmemevindieselpng512:.");
         }
     }
 
@@ -125,7 +125,7 @@ bot.on('message', async (msg) => {
             msg.guild.member(banMember),!kick();
             msg.channel.sendMessage("Membro **kickado** com sucesso :vindieselpngmemevindieselpng512:.");
         } else {
-            return msg.reply("Sem Permissão!.");
+            return msg.reply("Sem Permissão! :vindieselpngmemevindieselpng512:.");
         }
     }
     //Ban/Kick
