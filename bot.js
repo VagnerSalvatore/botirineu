@@ -114,7 +114,7 @@ bot.on('message', async (msg) => {
             msg.guild.member(banMember),!ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
         } else {
-            return msg.reply("Sem Permissão!:call_me:.");
+            return msg.reply("Sem Permissão! :face_palm:.");
         }
     }
 
@@ -125,14 +125,14 @@ bot.on('message', async (msg) => {
             msg.guild.member(banMember),!kick();
             msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
         } else {
-            return msg.reply("Sem Permissão!:call_me:.");
+            return msg.reply("Sem Permissão! :face_palm:.");
         }
     }
     //Ban/Kick
 
     if (message.content.startsWith('!eval')) {
         exports.run = (client, message, args) => {
-            if (message.author.id !== '269470460561850395') return message.reply(':x: Sem Permissão!  :vindieselpngmemevindieselpng512:');
+            if (message.author.id !== '269470460561850395') return message.reply(':x: Sem Permissão!  :face_palm:');
             try {
                 const code = args.join(" ");
                 let evaled = eval(code);
