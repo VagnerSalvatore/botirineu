@@ -36,7 +36,7 @@ bot.on('message', async (msg) => {
 
     //Down
 
-    if (message.content.startsWith('!irineu')) {
+    if (message.content.startsWith('.irineu')) {
         message.channel.send('Você Não Sabe Nem Eu');
     }
 
