@@ -94,18 +94,15 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
-    const newUsers = new Discord.Collection();
-    client.on("guildMemberAdd", (member) => {
-        const guild = member.guild;
-        newUsers.set(member.id, member.user);
-
-        if (newUsers.size > 10) {
-            const defaultChannel = guild.channels.find(c => c.permissionsFor(guild.me).has("SEND_MESSAGES"));
-            const userlist = newUsers.map(u => u.toString()).join(" ");
-            defaultChannel.send("Bem Vindo Ao Meu Servidor!\n" + userlist);
-            newUsers.clear();
-        }
-    });
+    // Create an event listener for new guild members
+client.on('guildMemberAdd', member => {
+    // Send the message to a designated channel on a server:
+    const channel = member.guild.channels.find('name', 'member-log');
+    // Do nothing if the channel wasn't found on this server
+    if (!channel) return;
+    // Send the message, mentioning the member
+    channel.send(`Welcome to the server, ${member}`);
+  });
 
 
 
