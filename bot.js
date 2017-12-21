@@ -7,12 +7,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
             if (message.content.startsWith('!ping')){
                 message.channel.send('!pong');
             }
-
-    bot.user.setStatus('Online')
-
-    bot.user.setGame('Irineu')
-}
-                    
+            
 
               //Ligado ?
                 if (message.content.startsWith('!on')){
