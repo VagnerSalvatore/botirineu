@@ -119,11 +119,6 @@ bot.on('message', message => {
         msgDel = 10
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-    }
-        //Sem Permissao
-        let role = message.guild.roles.find("name", "membro");
-        if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
-            message.channel.send('Sem Permissão');
         }
 
 
