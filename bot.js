@@ -3,6 +3,7 @@ const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const client = new Discord.Client();
 const request = require('request');
+const client = new Discord.Client();
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
