@@ -10,13 +10,6 @@ bot.on('ready', () => {
     bot.user.setPresence({ game: { name: `#Irineu`, type: 0 } });
 });
 
-// Anti chat
-bot.on('message', async (msg) => {
-    var is_PM = msg.channel.type == "dm";
-    var message = msg;
-    if (is_PM && msg.author.id != "") {
-        return msg.reply("**Sem mensagens no privado!**.");
-    }
 
     if (msg.content.split(" ")[0].indexOf("!") < 0) {
         return;
