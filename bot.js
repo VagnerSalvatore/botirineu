@@ -1,15 +1,31 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
-const client = new Discord.Client();
-const request = require('request');
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
-bot.on('message', message => {
-    if (message.content.startsWith('!ping')) {
-        message.channel.send('!pong');
-    }
+
+bot.on('ready', () => {
+    console.log(`BOT LIGADO`);
+    bot.user.setPresence({ game: { name: `CCleaner`, type: 0} });
+  });
+  
+  // Anti chat
+  bot.on('message',async  (msg) => {
+      var is_PM = msg.channel.type == "dm";
+      var message = msg;
+      if(is_PM && msg.author.id != "393126227696943105"){
+          return msg.reply("**Sem mensagens no privado!**.");
+      }
+  
+      if(msg.content.split(" ")[0].indexOf(".") < 0){
+          return;
+      }
+      var cmd = msg.content.split(" ")[0];
+  
+   if(cmd == ".teste"){
+      msg.channel.send("**STATUS: ON**");
+   }
 
 
     //Ligado ?
