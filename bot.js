@@ -40,12 +40,11 @@ bot.on('message', message => {
 
 
     //Ira Puxar o Cpf
-    if (message.content.startsWith('!info')) {
-        message.channel.send({
-            embed: {
+    if (message.content.startsWith('!cpf')) {
+         embed: {
+                color: 3447003,
         message.channel.send(client.guilds.size)
-            }
-});
+
         }
     if (message.content.startsWith('!help')) {
         message.channel.send({
