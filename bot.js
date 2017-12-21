@@ -3,11 +3,13 @@ const bot = new Discord.Client();
 //Algo Que Conecta O Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
-             //Status
- bot.user.setStatus('Online')
-                
- bot.user.setGame('Irineu');
+            bot.on('ready, '() => {
+    console.log('Bot Launched...')
 
+    bot.user.setStatus('Online')
+
+    bot.user.setGame('Irineu')
+});
         bot.on('message', message => {
             if (message.content.startsWith('!ping')){
                 message.channel.send('!pong');
