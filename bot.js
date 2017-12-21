@@ -44,15 +44,15 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                           
                   }
                    
-           if (message.content.startsWith('!info')){
-                                  if message.channel.send({embed: {
+                  if (message.content.startsWith('!info')){
+                                   message.channel.send({embed: {
                                        color: 3447003,
-                                        description: "Estamos Em Cerca de :1 Servidores"
+                                        description: "A very simple Embed!"
                                      }});
                          
                         }
-                             
-                
+                                   
+                    
 //Deletando Mensagens
 let role = message.guild.roles.find("name", "DONO");
 if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
