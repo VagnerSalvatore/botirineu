@@ -59,16 +59,16 @@ bot.on('message', message => {
     }
     if (message.content.startsWith('!info')) {
         const embed = new Discord.RichEmbed()
-            .setTitle("This is your title, it can hold 256 characters")
+            .setTitle("Irineubot.com.br")
             .setAuthor("Author Name", "https://i.imgur.com/lm8s41J.png")
             /*
              * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
              */
             .setColor(0x00AE86)
-            .setDescription("This is the main body of text, it can hold 2048 characters.")
+            .setDescription("Acesse Meu Site Oficial.")
             .setFooter("Criado Por:Dark#6709", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
-            .setImage("http://i.imgur.com/yVpymuV.png")
-            .setThumbnail("http://i.imgur.com/p2qNFag.png")
+            .setImage("http://imageurl.com.br/images/2017/12/21/47f6c63a6d26755680b7313eb942ac5483b454e4_00.gif")
+            .setThumbnail("http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
             /*
              * Takes a Date object, defaults to current date.
              */
@@ -79,12 +79,12 @@ bot.on('message', message => {
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
              */
-            .addField("Inline Field", "They can also be inline.", true)
+            .addField("Irineu", "Você Não Sabe Nem Eu.", true)
             /*
              * Blank field, useful to create some space.
              */
             .addBlankField(true)
-            .addField("Inline Field 3", "You can have a maximum of 25 fields.", true);
+            .addField("Versão", "V2.04", true);
 
         message.channel.send({ embed });
 
