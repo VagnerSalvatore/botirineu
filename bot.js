@@ -43,20 +43,10 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                           
                   }
                    
-                  if (message.content.startsWith('!help')){
+                  if (message.content.startsWith('!info')){
                     message.channel.send({embed: {
                         color: 3447003,
-                        description: "Meus Comandos"
-                        fields: [{
-                            name: "fields",
-        value: "You can put all the *usual* **__Markdown__** inside of them."
-      }
-    ],
-    timestamp: new Date(),
-    footer: {
-      icon_url: client.user.avatarURL,
-      text: "© Example"
-    }
+                        description: "A very simple Embed!"
                       }});
                     }
                                    if(message.content.startsWith('!invite')){
