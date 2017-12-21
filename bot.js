@@ -90,16 +90,28 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
-    // Create an event listener for new guild members
-client.on('guildMemberAdd', member => {
-    // Send the message to a designated channel on a server:
-    const channel = member.guild.channels.find('name', 'member-log');
-    // Do nothing if the channel wasn't found on this server
-    if (!channel) return;
-    // Send the message, mentioning the member
-    channel.send(`Bem Vindo Ao Servidor, ${member}`);
-  });
 
+
+    if(message.author.id !== config.ownerID) return;
+
+    client.on("message", message => {
+        const args = message.content.split(" ").slice(1);
+      
+        if (message.content.startsWith(config.prefix + "eval")) {
+          if(message.author.id !== config.ownerID) return;
+          try {
+            const code = args.join(" ");
+            let evaled = eval(code);
+      
+            if (typeof evaled !== "string")
+              evaled = require("util").inspect(evaled);
+      
+            message.channel.send(clean(evaled), {code:"xl"});
+          } catch (err) {
+            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+          }
+        }
+      });
 
 
     //Deletando Mensagens
