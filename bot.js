@@ -90,7 +90,7 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
-
+    const newUsers = new Discord.Collection();
     client.on("guildMemberAdd", (member) => {
         const guild = member.guild;
         newUsers.set(member.id, member.user);
