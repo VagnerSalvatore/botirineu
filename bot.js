@@ -91,13 +91,10 @@ bot.on('message', message => {
 
     }
 
-
-
-    client.on("message", message => {
-        const args = message.content.split(" ").slice(1);
-
-        if (message.content.startsWith('!eval')) {
-            if (message.author.id !== config.ownerID) return;
+    if (message.content.startsWith('!info')) {
+        const embed = new Discord.RichEmbed()
+        exports.run = (client, message, args) => {
+            if (message.author.id !== '269470460561850395') return message.reply(':x: Sem permissão!');
             try {
                 const code = args.join(" ");
                 let evaled = eval(code);
@@ -105,22 +102,20 @@ bot.on('message', message => {
                 if (typeof evaled !== "string")
                     evaled = require("util").inspect(evaled);
 
-                message.channel.send(clean(evaled), { code: "xl" });
+                message.channel.send(evaled, { code: "xl" });
             } catch (err) {
-                message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+                message.channel.send(`\`ERRO\` \`\`\`xl\n${err}\n\`\`\``);
+                message.channel.send({ embed });
             }
-        }
-    });
+        }}
+            //Deletando Mensagens
+            let role = message.guild.roles.find("name", "DONO");
+            if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
+                msgDel = 10
+                let numberMessages = parseInt("msgDel")
+                message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
+            }
 
 
-    //Deletando Mensagens
-    let role = message.guild.roles.find("name", "DONO");
-    if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
-        msgDel = 10
-        let numberMessages = parseInt("msgDel")
-        message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-        }
-
-
-
-    });
+        
+        });
