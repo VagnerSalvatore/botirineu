@@ -45,16 +45,13 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                   }
                    
            if (message.content.startsWith('!info')){
-            message.channel.send({embed: {
-                color: 3447003,
-                author: {
-                    name: client.user.username,
-                    icon_url: client.user.avatarURL
-                       },
-                description: "Estamos Em Cerca De :1 Servidores"
-              }});
-                
-                }
+                                  if message.channel.send({embed: {
+                                       color: 3447003,
+                                        description: "Estamos Em Cerca de :1 Servidores"
+                                     }});
+                         
+                        }
+                             
                 
 //Deletando Mensagens
 let role = message.guild.roles.find("name", "DONO");
