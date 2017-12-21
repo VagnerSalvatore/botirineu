@@ -7,25 +7,25 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
 bot.on('ready', () => {
     console.log(`BOT LIGADO`);
-    bot.user.setPresence({ game: { name: `CCleaner`, type: 0} });
-  });
-  
-  // Anti chat
-  bot.on('message',async  (msg) => {
-      var is_PM = msg.channel.type == "dm";
-      var message = msg;
-      if(is_PM && msg.author.id != "393126227696943105"){
-          return msg.reply("**Sem mensagens no privado!**.");
-      }
-  
-      if(msg.content.split(" ")[0].indexOf(".") < 0){
-          return;
-      }
-      var cmd = msg.content.split(" ")[0];
-  
-   if(cmd == ".teste"){
-      msg.channel.send("**STATUS: ON**");
-   }
+    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
+});
+
+// Anti chat
+bot.on('message', async (msg) => {
+    var is_PM = msg.channel.type == "dm";
+    var message = msg;
+    if (is_PM && msg.author.id != "393126227696943105") {
+        return msg.reply("**Sem mensagens no privado!**.");
+    }
+
+    if (msg.content.split(" ")[0].indexOf(".") < 0) {
+        return;
+    }
+    var cmd = msg.content.split(" ")[0];
+
+    if (cmd == ".teste") {
+        msg.channel.send("**STATUS: ON**");
+    }
 
 
     //Ligado ?
