@@ -131,13 +131,6 @@ bot.on('message', async (msg) => {
     //Ban/Kick
 
     
-  if (message.content.startsWith('!ban')) {
-embed=discord.Embed(title="Banimento", url="http://www.ban.com", description="Usuario Banido !", color=0x80ff80)
-embed.set_author(name="Irineu")
-embed.set_thumbnail(url="http://forum.maxabout.com/uploads/default/original/2X/7/72a7ebb1196bd6ddc39cc9ad1a6af84193346d98.png")
-embed.set_footer(text="Ban")
-await self.bot.say(embed=embed)
-    
     
     //Deletando Mensagens
     let role = message.guild.roles.find("name", "DONO");
