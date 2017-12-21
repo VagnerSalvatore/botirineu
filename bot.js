@@ -39,10 +39,9 @@ bot.on('message', message => {
     }
 
 
-    //Ira Puxar o Cpf
-    if (message.content.startsWith('!cpf')) {
-         embed: {
-                color: 3447003,
+    //Numero de Servidores
+     if (message.content.startsWith('!bot')) {
+         message.channel.send('Servidores Em Que Estou');
         message.channel.send(client.guilds.size)
 
         }
