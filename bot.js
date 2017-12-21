@@ -111,7 +111,7 @@ bot.on('message', async (msg) => {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
-            msg.guild.member(banMember)!ban();
+            msg.guild.member(banMember),!ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
         } else {
             return msg.reply("Você não tem **permissão** de **banir** outros **usuários**.");
@@ -122,7 +122,7 @@ bot.on('message', async (msg) => {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
-            msg.guild.member(banMember)!kick();
+            msg.guild.member(banMember),!kick();
             msg.channel.sendMessage("Membro **kickado** com sucesso :vindieselpngmemevindieselpng512:.");
         } else {
             return msg.reply("Sem Permissão!.");
