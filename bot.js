@@ -1,5 +1,6 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
+const embed = new Discord.RichEmbed()
 //Algo Que Conecta O Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
@@ -46,7 +47,6 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                    
            if (message.content.startsWith('!info')){
                 message.channel.send({embed: {
-                    const embed = new Discord.RichEmbed()
                     .setTitle("Informações Do Bot")
   .setAuthor("Irineu", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
   /*
