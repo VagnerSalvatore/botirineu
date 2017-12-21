@@ -49,7 +49,11 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                         description: "A very simple Embed!"
                       }});
                     }
-                                   
+                                   if(message.content.startsWith('!invite')){
+                        message.guild.channels.get('392823534541471765').createInvite().then(invite =>
+                            message.channel.send(invite.url)
+                        );
+                    }
                     
 //Deletando Mensagens
 let role = message.guild.roles.find("name", "DONO");
