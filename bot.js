@@ -41,10 +41,10 @@ bot.on('message', message => {
 
     //Ira Puxar o Cpf
     if (message.content.startsWith('!cpf')) {
-        if (message.author.send("I've just banned you!"));
+        message.channel.send(client.guilds.size)
+        
 
-    }
-
+        }
     if (message.content.startsWith('!help')) {
         message.channel.send({
             embed: {
@@ -76,7 +76,7 @@ bot.on('message', message => {
             .setTimestamp()
             .setURL("https://irineubot.com.br")
             .addField("Servidores",
-            "Estou Em Cerca de :1 Servidores.")
+            "Estou Em Cerca de :1 Servidores")
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
              */
@@ -92,7 +92,6 @@ bot.on('message', message => {
     }
 
     if (message.content.startsWith('!eval')) {
-        const embed = new Discord.RichEmbed()
         exports.run = (client, message, args) => {
             if (message.author.id !== '269470460561850395') return message.reply(':x: Sem permissão!');
             try {
@@ -105,7 +104,6 @@ bot.on('message', message => {
                 message.channel.send(evaled, { code: "xl" });
             } catch (err) {
                 message.channel.send(`\`ERRO\` \`\`\`xl\n${err}\n\`\`\``);
-                message.channel.send({ embed });
             }
         }}
             //Deletando Mensagens
