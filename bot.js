@@ -45,7 +45,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                   }
                    
                   if (message.content.startsWith('!info')){
-                    if message.channel.send({embed: {
+                     message.channel.send({embed: {
                         color: 3447003,
                         author: {
                           name: client.user.username,
