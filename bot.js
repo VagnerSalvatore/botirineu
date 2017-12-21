@@ -114,7 +114,7 @@ bot.on('message', async (msg) => {
             msg.guild.member(banMember),!ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
         } else {
-            return msg.reply("Sem Permissão! :vindieselpngmemevindieselpng512:.");
+            return msg.reply("Sem Permissão!:call_me:.");
         }
     }
 
@@ -123,9 +123,9 @@ bot.on('message', async (msg) => {
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
             msg.guild.member(banMember),!kick();
-            msg.channel.sendMessage("Membro **kickado** com sucesso :vindieselpngmemevindieselpng512:.");
+            msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
         } else {
-            return msg.reply("Sem Permissão! :vindieselpngmemevindieselpng512:.");
+            return msg.reply("Sem Permissão!:call_me:.");
         }
     }
     //Ban/Kick
