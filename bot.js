@@ -60,7 +60,7 @@ bot.on('message', message => {
     if (message.content.startsWith('!info')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Irineubot.com.br")
-            .setAuthor("IrineuBotTop", "https://i.imgur.com/lm8s41J.png")
+            .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
             /*
              * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
              */
