@@ -8,9 +8,9 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                 message.channel.send('!pong');
             }
 
-    bot.on.setStatus('Online')
+    bot.user.setStatus('Online')
 
-    bot.on.setGame('Irineu')
+    bot.user.setGame('Irineu')
 }
                     
 
