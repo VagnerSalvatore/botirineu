@@ -46,11 +46,35 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                    
            if (message.content.startsWith('!info')){
                 message.channel.send({embed: {
-                    color: 3447003,
-                    description: "A very simple Embed!"
-                  }});
+                    const embed = new Discord.RichEmbed()
+                    .setTitle("Informações Do Bot")
+  .setAuthor("Irineu", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
+  /*
+   * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+   */
+  .setColor(0x00AE86)
+  .setDescription("Numero De Servidores.")
+  .setFooter("Criado Por Dark#6709", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
+  .setImage("http://imageurl.com.br/images/2017/12/21/47f6c63a6d26755680b7313eb942ac5483b454e4_00.gif")
+  .setThumbnail("http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
+  /*
+   * Takes a Date object, defaults to current date.
+   */
+  .setTimestamp()
+  .setURL("https://irineubot.com.br")
+  .addField("Servidores",
+    "Estamos Em Cerca De 1 Servidores.")
+  /*
+   * Blank field, useful to create some space.
+   */
+  .addBlankField(true)
+  .addField("Irineu", "Você Não Sabe Nem Eu.", true);
+
+  message.channel.send({embed})
     
-                }
+}});
+    
+}             
                 
                 
                 
