@@ -66,7 +66,7 @@ bot.on('message', message => {
              */
             .setColor(0x00AE86)
             .setDescription("This is the main body of text, it can hold 2048 characters.")
-            .setFooter("This is the footer text, it can hold 2048 characters", "http://i.imgur.com/w1vhFSR.png")
+            .setFooter("Criado Por:Dark#6709", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
             .setImage("http://i.imgur.com/yVpymuV.png")
             .setThumbnail("http://i.imgur.com/p2qNFag.png")
             /*
@@ -74,8 +74,8 @@ bot.on('message', message => {
              */
             .setTimestamp()
             .setURL("https://irineubot.com.br")
-            .addField("Meu Site Oficial",
-            "Clique Para Acessar.")
+            .addField("Servidores",
+            "Estou Em Cerca de :1 Servidores.")
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
              */
