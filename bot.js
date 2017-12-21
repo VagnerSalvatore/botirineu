@@ -57,6 +57,7 @@ if(message.member.roles.has(role.id) && message.content.startsWith("!delete")){
             
                 //BotInfo
                 if (message.content.startsWith('!info')){
+                   message.channel.send
 embed=discord.Embed(title="Bot Info", description="Informações do Bot", color=0x0080ff)
 embed.set_author(name="Irineu", url="https://irineubot.com.br",, icon_url="http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
 embed.set_thumbnail(url="http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
