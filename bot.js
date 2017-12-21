@@ -5,6 +5,10 @@ const newUsers = new Discord.Collection();
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
+User.status; // the status of the user
+User.game; // the game that the user is playing
+ClientUser.setStatus('Irineu'); // set the new status for the user
+
 bot.on('message', message => {
     if (message.content.startsWith('!ping')) {
         message.channel.send('!pong');
