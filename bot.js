@@ -18,7 +18,7 @@ bot.on('message', async (msg) => {
         return msg.reply();
     }
 
-    if (msg.content.split(" ")[0].indexOf(".") < 0) {
+    if (msg.content.split(" ")[0].indexOf("!") < 0) {
         return;
     }
     var cmd = msg.content.split(" ")[0];
