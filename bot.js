@@ -2,6 +2,7 @@ const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const client = new Discord.Client();
+const request = require('request');
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
@@ -40,11 +41,11 @@ bot.on('message', message => {
 
 
     //Numero de Servidores
-     if (message.content.startsWith('!bot')) {
-         message.channel.send('Servidores Em Que Estou');
-         message.channel.send(client.guilds.size)
+    if (message.content.startsWith('!bot')) {
+        message.channel.send('Servidores Em Que Estou');
+        message.channel.send(client.guilds.size)
 
-        }
+    }
     if (message.content.startsWith('!help')) {
         message.channel.send({
             embed: {
@@ -90,34 +91,34 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
-    
-    
-    
-    
-    
-//Ban/Kick
-if(cmd == ".ban") {
-    let modRole = msg.guild.roles.find("name", "DONO");
-    if(msg.member.roles.has(modRole.id)) { 
-      let banMember = msg.guild.member(msg.mentions.users.first());
-      msg.guild.member(banMember).ban();
-      msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
-    } else {
-      return msg.reply("Você não tem **permissão** de **banir** outros **usuários**.");
-    }
-  }
 
-  if(cmd == ".kick") {
-    let modRole = msg.guild.roles.find("name", "DONO");
-    if(msg.member.roles.has(modRole.id)) { 
-      let banMember = msg.guild.member(msg.mentions.users.first());
-      msg.guild.member(banMember).kick();
-      msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
-    } else {
-      return msg.reply("Você não tem **permissão** de **kickar** outros **usuários**.");
+
+
+
+
+    //Ban/Kick
+    if (cmd == ".ban") {
+        let modRole = msg.guild.roles.find("name", "DONO");
+        if (msg.member.roles.has(modRole.id)) {
+            let banMember = msg.guild.member(msg.mentions.users.first());
+            msg.guild.member(banMember).ban();
+            msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
+        } else {
+            return msg.reply("Você não tem **permissão** de **banir** outros **usuários**.");
+        }
     }
-  }
-  //Ban/Kick
+
+    if (cmd == ".kick") {
+        let modRole = msg.guild.roles.find("name", "DONO");
+        if (msg.member.roles.has(modRole.id)) {
+            let banMember = msg.guild.member(msg.mentions.users.first());
+            msg.guild.member(banMember).kick();
+            msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
+        } else {
+            return msg.reply("Você não tem **permissão** de **kickar** outros **usuários**.");
+        }
+    }
+    //Ban/Kick
 
     if (message.content.startsWith('!eval')) {
         exports.run = (client, message, args) => {
@@ -133,15 +134,16 @@ if(cmd == ".ban") {
             } catch (err) {
                 message.channel.send(`\`ERRO\` \`\`\`xl\n${err}\n\`\`\``);
             }
-        }}
-            //Deletando Mensagens
-            let role = message.guild.roles.find("name", "DONO");
-            if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
-                msgDel = 10
-                let numberMessages = parseInt("msgDel")
-                message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-            }
+        }
+    }
+    //Deletando Mensagens
+    let role = message.guild.roles.find("name", "DONO");
+    if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
+        msgDel = 10
+        let numberMessages = parseInt("msgDel")
+        message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
+    }
 
 
-        
-        });
+
+});
