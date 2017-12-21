@@ -95,22 +95,22 @@ bot.on('message', message => {
 
     client.on("message", message => {
         const args = message.content.split(" ").slice(1);
-      
+
         if (message.content.startsWith('!eval')) {
-          let role = message.guild.roles.find("name", "DONO");
-          try {
-            const code = args.join(" ");
-            let evaled = eval(code);
-      
-            if (typeof evaled !== "string")
-              evaled = require("util").inspect(evaled);
-      
-            message.channel.send(clean(evaled), {code:"xl"});
-          } catch (err) {
-            message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
-          }
+            if (message.author.id !== config.ownerID) return;
+            try {
+                const code = args.join(" ");
+                let evaled = eval(code);
+
+                if (typeof evaled !== "string")
+                    evaled = require("util").inspect(evaled);
+
+                message.channel.send(clean(evaled), { code: "xl" });
+            } catch (err) {
+                message.channel.send(`\`ERROR\` \`\`\`xl\n${clean(err)}\n\`\`\``);
+            }
         }
-      });
+    });
 
 
     //Deletando Mensagens
@@ -119,9 +119,13 @@ bot.on('message', message => {
         msgDel = 10
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-
     }
+        //Sem Permissao
+        let role = message.guild.roles.find("name", "membro");
+        if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
+            message.channel.send('Sem Permissão');
+        }
 
 
 
-});
+    });
