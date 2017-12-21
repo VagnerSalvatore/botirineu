@@ -7,7 +7,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
 bot.on('ready', () => {
     console.log(`BOT LIGADO`);
-    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
+    bot.user.setPresence({ game: { name: `#Irineu`, type: 0 } });
 });
 
 // Anti chat
