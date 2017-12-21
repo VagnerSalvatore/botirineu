@@ -5,10 +5,6 @@ const client = new Discord.Client();
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
-User.status; // the status of the user
-User.game; // the game that the user is playing
-ClientUser.setStatus('Irineu'); // set the new status for the user
-
 bot.on('message', message => {
     if (message.content.startsWith('!ping')) {
         message.channel.send('!pong');
@@ -101,7 +97,7 @@ client.on('guildMemberAdd', member => {
     // Do nothing if the channel wasn't found on this server
     if (!channel) return;
     // Send the message, mentioning the member
-    channel.send(`Welcome to the server, ${member}`);
+    channel.send(`Bem Vindo Ao Servidor, ${member}`);
   });
 
 
