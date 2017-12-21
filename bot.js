@@ -3,10 +3,10 @@ const bot = new Discord.Client();
 //Algo Que Conecta O Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
-               //Status
-                bot.user.setStatus('Online')
+             //Status
+ bot.user.setStatus('Online')
                 
-                bot.user.setGame('Irineu')
+ bot.user.setGame('Irineu');
 
 });
 
