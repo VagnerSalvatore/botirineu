@@ -47,7 +47,11 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
                   if (message.content.startsWith('!info')){
                                    message.channel.send({embed: {
                                        color: 3447003,
-                                        description: "Estou em Cerca de :1 Servidores"
+                                       author: {
+                                        name: client.user.username,
+                                        icon_url: client.user.avatarURL
+                                      },
+                                        description: "A very simple Embed!"
                                      }});
                          
                         }
