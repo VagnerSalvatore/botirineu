@@ -7,7 +7,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
 bot.on('ready', () => {
     console.log(`BOT LIGADO`);
-    bot.user.setPresence({ game: { name: `#Irineu`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
 });
 
 // Anti chat
@@ -17,27 +17,20 @@ bot.on('message', async (msg) => {
     if (is_PM && msg.author.id != "139412744439988224") {
         return msg.reply();
     }
-    
-    
-    if (msg.content.split(" ")[0].indexOf("!") < 0) {
+
+    if (msg.content.split(" ")[0].indexOf(".") < 0) {
         return;
     }
     var cmd = msg.content.split(" ")[0];
 
-    if (cmd == ".teste") {
-        msg.channel.send("**STATUS: ON**");
-    }
-
-
-    //Ligado ?
-    if (message.content.startsWith('!on')) {
-        message.channel.send('Claro Que Sim Pô');
+    if (cmd == "!on") {
+        msg.channel.send("**Claro Que Sim Pô**");
     }
 
 
     //Down
 
-    if (message.content.startsWith('.irineu')) {
+    if (message.content.startsWith('!irineu')) {
         message.channel.send('Você Não Sabe Nem Eu');
     }
 
@@ -114,7 +107,7 @@ bot.on('message', async (msg) => {
 
 
     //Ban/Kick
-    if (cmd == ".ban") {
+    if (cmd == "!ban") {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
@@ -125,7 +118,7 @@ bot.on('message', async (msg) => {
         }
     }
 
-    if (cmd == ".kick") {
+    if (cmd == "!kick") {
         let modRole = msg.guild.roles.find("name", "DONO");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
