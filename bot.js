@@ -1,6 +1,7 @@
 const Discord = require('discord.js');
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
+const newUsers = new Discord.Collection();
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
 
@@ -89,6 +90,19 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
+
+    client.on("guildMemberAdd", (member) => {
+        const guild = member.guild;
+        newUsers.set(member.id, member.user);
+      
+        if (newUsers.size > 10) {
+          const defaultChannel = guild.channels.find(c=> c.permissionsFor(guild.me).has("SEND_MESSAGES"));
+          const userlist = newUsers.map(u => u.toString()).join(" ");
+          defaultChannel.send("Bem Vindo Ao Meu Servidor!\n" + userlist);
+          newUsers.clear();
+        }
+      });
+    
 
 
     //Deletando Mensagens
