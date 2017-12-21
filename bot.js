@@ -91,7 +91,7 @@ bot.on('message', message => {
 
     }
 
-    if (message.content.startsWith('!info')) {
+    if (message.content.startsWith('!eval')) {
         const embed = new Discord.RichEmbed()
         exports.run = (client, message, args) => {
             if (message.author.id !== '269470460561850395') return message.reply(':x: Sem permissão!');
