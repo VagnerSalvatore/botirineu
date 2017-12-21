@@ -90,6 +90,34 @@ bot.on('message', message => {
         message.channel.send({ embed });
 
     }
+    
+    
+    
+    
+    
+//Ban/Kick
+if(cmd == ".ban") {
+    let modRole = msg.guild.roles.find("name", "DONO");
+    if(msg.member.roles.has(modRole.id)) { 
+      let banMember = msg.guild.member(msg.mentions.users.first());
+      msg.guild.member(banMember).ban();
+      msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
+    } else {
+      return msg.reply("Você não tem **permissão** de **banir** outros **usuários**.");
+    }
+  }
+
+  if(cmd == ".kick") {
+    let modRole = msg.guild.roles.find("name", "DONO");
+    if(msg.member.roles.has(modRole.id)) { 
+      let banMember = msg.guild.member(msg.mentions.users.first());
+      msg.guild.member(banMember).kick();
+      msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
+    } else {
+      return msg.reply("Você não tem **permissão** de **kickar** outros **usuários**.");
+    }
+  }
+  //Ban/Kick
 
     if (message.content.startsWith('!eval')) {
         exports.run = (client, message, args) => {
