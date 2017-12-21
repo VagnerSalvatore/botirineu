@@ -40,10 +40,12 @@ bot.on('message', message => {
 
 
     //Ira Puxar o Cpf
-    if (message.content.startsWith('!cpf')) {
+    if (message.content.startsWith('!info')) {
+        message.channel.send({
+            embed: {
         message.channel.send(client.guilds.size)
-        
-
+            }
+});
         }
     if (message.content.startsWith('!help')) {
         message.channel.send({
@@ -76,8 +78,7 @@ bot.on('message', message => {
             .setTimestamp()
             .setURL("https://irineubot.com.br")
             .addField("Servidores",
-            "Estou Em Cerca de :");
-            message.channel.send(client.guilds.size)
+            "Estou Em Cerca de :1 Servidores")
             /*
              * Inline fields may not display as inline if the thumbnail and/or image is too big.
              */
