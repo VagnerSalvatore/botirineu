@@ -75,7 +75,7 @@ bot.on("guildMemberAdd", function(member) {
 
     }
     if (message.content.startsWith('!invite')) {
-        message.guild.channels.get('392823534541471765').createInvite().then(invite =>
+        message.guild.channels.get('393841445376622612').createInvite().then(invite =>
             message.channel.send(invite.url)
         );
     }
