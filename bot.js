@@ -56,11 +56,11 @@ bot.on('message', async (msg) => {
         message.channel.send(client.guilds.size)
 
     }
-    if (message.content.startsWith('!help')) {
+    if (message.content.startsWith('!ban')) {
         message.channel.send({
             embed: {
                 color: 3447003,
-                description: "Meus Comandos"
+                description: "Usuario Banido"
             }
         });
     }
