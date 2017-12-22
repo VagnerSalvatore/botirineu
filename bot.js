@@ -27,6 +27,21 @@ bot.on('message', async (msg) => {
         msg.channel.send("**Claro Que Sim Pô**");
     }
 
+//Bem Vindo
+bot.on("guildMemberAdd", function(member) {
+    const WelcomeMsg = new Discord.RichEmbed()
+      .setTitle("Novo Integrante!")
+      .setColor(0x42f1f4)
+      .setDescription(member.toString() + "**Bem Vindo Ao Servidor** :wave: ")
+      .setFooter("Joined the server at!")
+      .setTimestamp();
+         
+      var channel = bot.channels.get("393749252896981003");
+      member.addRole("393750458432356353");
+      channel.send({embed: WelcomeMsg}) 
+
+    })
+
 
     //Down
 
@@ -117,7 +132,7 @@ if(message.content.startsWith("!ping")) {
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
             msg.guild.member(banMember).kick();
-            msg.channel.sendMessage("Membro **kickado** com sucesso :call_me:.");
+            msg.channel.sendMessage("Membro **Chutado** com sucesso :call_me:.");
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
