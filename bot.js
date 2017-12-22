@@ -61,21 +61,14 @@ bot.on("guildMemberAdd", function(member) {
 
     }
 
-    //Testador De Logins
-    if (message.content.startsWith('!testar')) {
-        if (message.channel.sendFile('http://localhost/logins.txt'));
-
-    }
-
 
     //Numero de Servidores
     if (message.content.startsWith('!bot')) {
         message.channel.send('Servidores Em Que Estou');
-        message.channel.send(client.guilds.size)
-
+         message.channel.send(bot.guilds.size)
     }
     if (message.content.startsWith('!invite')) {
-        message.guild.channels.get('393841445376622612').createInvite().then(invite =>
+        message.guild.channels.get(guild.id).createInvite().then(invite =>
             message.channel.send(invite.url)
         );
     }
@@ -115,9 +108,9 @@ bot.on("guildMemberAdd", function(member) {
 if(message.content.startsWith("!ping")) {
                 const embed = new Discord.RichEmbed()
                 message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: pong");
-                    
-                }
-
+                
+}
+            
     //Ban/Kick
     if (cmd == "!ban") {
         let modRole = msg.guild.roles.find("name", "DONO");
