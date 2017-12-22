@@ -30,18 +30,18 @@ bot.on('message', async (msg) => {
         msg.channel.send("**Claro Que Sim Pô**");
     }
 
-//Bem Vindo
-bot.on("guildMemberAdd", function(member) {
-    const WelcomeMsg = new Discord.RichEmbed()
-      .setTitle("Novo Integrante!")
-      .setColor(0x42f1f4)
-      .setDescription(member.toString() + "**Bem Vindo Ao Servidor** :wave: ")
-      .setFooter("Joined the server at!")
-      .setTimestamp();
-         
-      var channel = bot.channels.get("393749252896981003");
-      member.addRole("393750458432356353");
-      channel.send({embed: WelcomeMsg}) 
+    //Bem Vindo
+    bot.on("guildMemberAdd", function (member) {
+        const WelcomeMsg = new Discord.RichEmbed()
+            .setTitle("Novo Integrante!")
+            .setColor(0x42f1f4)
+            .setDescription(member.toString() + "**Bem Vindo Ao Servidor** :wave: ")
+            .setFooter("Joined the server at!")
+            .setTimestamp();
+
+        var channel = bot.channels.get("393749252896981003");
+        member.addRole("393750458432356353");
+        channel.send({ embed: WelcomeMsg })
 
     })
 
@@ -65,7 +65,7 @@ bot.on("guildMemberAdd", function(member) {
     //Numero de Servidores
     if (message.content.startsWith('!bot')) {
         message.channel.send('Servidores Em Que Estou');
-         message.channel.send(bot.guilds.size)
+        message.channel.send(bot.guilds.size)
     }
     if (message.content.startsWith('!invite')) {
         message.guild.channels.get(guild.id).createInvite().then(invite =>
@@ -105,12 +105,12 @@ bot.on("guildMemberAdd", function(member) {
 
     }
 
-if(message.content.startsWith("!ping")) {
-                const embed = new Discord.RichEmbed()
-                message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: pong");
-                
-}
-            
+    if (message.content.startsWith("!ping")) {
+        const embed = new Discord.RichEmbed()
+        message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: pong");
+
+    }
+
     //Ban/Kick
     if (cmd == "!ban") {
         let modRole = msg.guild.roles.find("name", "DONO");
@@ -132,17 +132,16 @@ if(message.content.startsWith("!ping")) {
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-    
-    //Ban/Kick
+
+        //Ban/Kick
     }
-    
+
     //Deletando Mensagens
     let role = message.guild.roles.find("name", "DONO");
     if (message.member.roles.has(role.id) && message.content.startsWith("!delete")) {
         msgDel = 10
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-    
-    }
 
+    }
 });
