@@ -1,8 +1,14 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
+const fs = require('fs');
+const db = require('quick.db');
+
+// Global Settings
+const prefix = '!'; // This is the prefix, you can change it to whatever you want.
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
+
 
 
 bot.on('ready', () => {
@@ -76,7 +82,7 @@ bot.on("guildMemberAdd", function(member) {
             message.channel.send(invite.url)
         );
     }
-    if (message.content.startsWith('!info')) {
+    if (message.content.startsWith('!botinfo')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Irineubot.com.br")
             .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/21/avatar_anime_by_mrjavatwitch-d5uxc1h.png")
@@ -148,4 +154,55 @@ if(message.content.startsWith("!ping")) {
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
     }
+
+    bot.on("message", function (message) {
+        const PREFIX = '!'
+        if (message.content == PREFIX + 'meme') {
+            const pictureNumber = Math.floor(Math.random()*3)+1;
+            message.channel.send({ files: [new Discord.Attachment(`./${pictureNumber}.jpg`)] });
+        };
+    });
+// Listener Event: Runs whenever a message is received.
+bot.on('message', message => {
+
+    // Variables - Variables make it easy to call things, since it requires less typing.
+    let msg = message.content.toUpperCase(); // This variable takes the message, and turns it all into uppercase so it isn't case sensitive.
+    let sender = message.author; // This variable takes the message, and finds who the author is.
+    let args = message.content.slice(prefix.length).trim().split(" "); // This variable slices off the prefix, then puts the rest in an array based off the spaces
+    let cmd = args.shift().toLowerCase(); // This takes away the first object in the cont array, then puts it in this.
+
+    // Message Leveling System - Make sure you require quick.db
+    db.updateValue(message.author.id + message.guild.id, 1).then(i => { // You pass it the key, which is authorID + guildID, then pass it an increase which is 1 in this instance.
+        // It also returns the new updated object, which is what we will use.
+
+        let messages; // Create an empty variable - These IF statements will run if the new amount of messages sent is the same as the number.
+        if (i.value == 10) messages = 10; // Level 1
+        else if (i.value == 200) messages = 200; // Level 2
+        else if (i.value == 300) messages = 300; // Level 3 - You can set these to any number, and any amount of them.
+
+        if (!isNaN(messages)) { // If messages IS STILL empty, run this.
+            db.updateValue(`userLevel_${message.author.id + message.guild.id}`, 1).then(o => { // This returns the updated object of userLevel_ID. 
+                message.channel.send(`Você Enviou ${messages} Mensagens, E subiu de Nivel! Você Agora é level ${o.value}`) // Send their updated level to the channel.
+            })
+        }
+
+    })
+
+    // We also need to make sure it doesn't respond to bots
+    if (sender.bot) return;
+    if (!message.content.startsWith(prefix)) return; // We also want to make it so that if the message does not start with the prefix, return.
+
+    // Command Handler - .trim() removes the blank spaces on both sides of the string
+    try {
+        let commandFile = require(`./commands/${cmd}.js`); // Arquivo CommandFile
+        commandFile.run(bot, message, args, func); // This will add the functions, from the functions.js file into each commandFile.
+    } catch (e) { // If an error occurs, this will run.
+        console.log(e.message); // This logs the error message
+    } finally { // This will run after the first two clear up
+        console.log(`${message.author.username} ran the command: ${cmd}`);
+    }
+
+});
+
+
 });
