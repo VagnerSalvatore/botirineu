@@ -103,7 +103,29 @@ bot.on('message', async (msg) => {
     }
 
 
-
+if (message.content.startsWith('!ban')){
+    let role = message.guild.roles.find("name", "DONO");
+} else {
+    return msg.reply("Sem Permissão! :face_palm:.");
+}
+    const embed = new Discord.RichEmbed()
+    .setTitle("Banido")
+    .setAuthor("Irineu", "https://i.imgur.com/lm8s41J.png")
+    /*
+     * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+     */
+    .setColor(0x00AE86)
+    .setDescription("Usuario Banido Com Sucesso.")
+    .setImage("http://imageurl.com.br/images/2017/12/21/47f6c63a6d26755680b7313eb942ac5483b454e4_00.gif")
+    .setThumbnail("http://forum.maxabout.com/uploads/default/original/2X/7/72a7ebb1196bd6ddc39cc9ad1a6af84193346d98.png")
+    /*
+     * Takes a Date object, defaults to current date.
+     */
+    .setTimestamp()
+    .setURL("ban.org")
+    .addBlankField(true);
+    message.channel.send({embed});
+});
 
 
     //Ban/Kick
