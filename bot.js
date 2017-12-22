@@ -105,9 +105,6 @@ bot.on('message', async (msg) => {
 
 if (message.content.startsWith('!ban')){
     let role = message.guild.roles.find("name", "DONO");
-} else {
-    return msg.reply("Sem Permissão! :face_palm:.");
-}
     const embed = new Discord.RichEmbed()
     .setTitle("Banido")
     .setAuthor("Irineu", "https://i.imgur.com/lm8s41J.png")
