@@ -155,13 +155,6 @@ if(message.content.startsWith("!ping")) {
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
     }
 
-    bot.on("message", function (message) {
-        const PREFIX = '!'
-        if (message.content == PREFIX + 'meme') {
-            const pictureNumber = Math.floor(Math.random()*3)+1;
-            message.channel.send({ files: [new Discord.Attachment(`./${pictureNumber}.jpg`)] });
-        };
-    });
 // Listener Event: Runs whenever a message is received.
 bot.on('message', message => {
 
