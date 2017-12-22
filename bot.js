@@ -56,14 +56,6 @@ bot.on('message', async (msg) => {
         message.channel.send(client.guilds.size)
 
     }
-    if (message.content.startsWith('!ban')) {
-        message.channel.send({
-            embed: {
-                color: 3447003,
-                description: "Usuario Banido"
-            }
-        });
-    }
     if (message.content.startsWith('!invite')) {
         message.guild.channels.get('392823534541471765').createInvite().then(invite =>
             message.channel.send(invite.url)
@@ -119,11 +111,10 @@ if (message.content.startsWith('!ban')){
      * Takes a Date object, defaults to current date.
      */
     .setTimestamp()
-    .setURL("ban.org")
+    .setURL("http://www.ban.org")
     .addBlankField(true);
     message.channel.send({embed});
-});
-
+}
 
     //Ban/Kick
     if (cmd == "!ban") {
@@ -146,10 +137,10 @@ if (message.content.startsWith('!ban')){
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-    }
+    
     //Ban/Kick
 
-    
+    }
     
     //Deletando Mensagens
     let role = message.guild.roles.find("name", "DONO");
@@ -158,7 +149,4 @@ if (message.content.startsWith('!ban')){
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
     }
-
-
-
 });
