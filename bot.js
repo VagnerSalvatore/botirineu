@@ -94,7 +94,11 @@ bot.on('message', async (msg) => {
 
     }
 
-
+if(message.content.startsWith("!ping")) {
+                const embed = new Discord.RichEmbed()
+                message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: pong");
+                    
+                }
 
     //Ban/Kick
     if (cmd == "!ban") {
