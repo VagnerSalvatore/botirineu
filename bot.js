@@ -2,8 +2,6 @@ const Discord = require("discord.js");
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const fs = require('fs');
-const db = require('quick.db');
-
 // Global Settings
 const prefix = '!'; // This is the prefix, you can change it to whatever you want.
 //Login Do Bot
