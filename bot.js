@@ -141,7 +141,6 @@ if(message.content.startsWith("!ping")) {
         }
     
     //Ban/Kick
-
     }
     
     //Deletando Mensagens
@@ -150,6 +149,7 @@ if(message.content.startsWith("!ping")) {
         msgDel = 10
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
+    
     }
 
 });
