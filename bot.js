@@ -4,7 +4,7 @@ const embed = new Discord.RichEmbed();
 // Global Settings
 const prefix = '!'; // This is the prefix, you can change it to whatever you want.
 //Login Do Bot
-bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DRtKpg.do0s2qG6k8oXSeLmVajwh8dnuJ8');
+bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 
 
