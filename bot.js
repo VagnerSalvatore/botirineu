@@ -62,7 +62,7 @@ bot.on('message', async (msg) => {
     }
 
     //KKK
-    if (message.content.startsWith('bom dia')){
+    if (message.content.startsWith('!bom dia')){
 
         message.channel.send("Bom Dia " + message.author.toString() + ", É o Caralho!");
     }
