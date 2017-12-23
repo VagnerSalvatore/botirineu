@@ -1,16 +1,15 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
-const embed = new Discord.RichEmbed();
+const embed = new Discord.RichEmbed();;
 // Global Settings
 const prefix = '!'; // This is the prefix, you can change it to whatever you want.
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 
-
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
-    bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
 });
 
 // Anti chat
@@ -119,7 +118,7 @@ bot.on('message', async (msg) => {
 
     //Ban/Kick
     if (cmd == "!ban") {
-        let modRole = msg.guild.roles.find("name", "DONO");
+        let modRole = msg.guild.roles.find("name", "Dono");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
             msg.guild.member(banMember).ban();
@@ -130,7 +129,7 @@ bot.on('message', async (msg) => {
     }
 
     if (cmd == "!kick") {
-        let modRole = msg.guild.roles.find("name", "DONO");
+        let modRole = msg.guild.roles.find("name", "Dono");
         if (msg.member.roles.has(modRole.id)) {
             let banMember = msg.guild.member(msg.mentions.users.first());
             msg.guild.member(banMember).kick();
@@ -146,7 +145,7 @@ bot.on('message', async (msg) => {
 
     //Deletando Mensagens
     if (cmd == "!delete") {
-        let role = message.guild.roles.find("name", "DONO");
+        let role = message.guild.roles.find("name", "Dono");
         if (message.member.roles.has(role.id)) {
             msgDel = 10
             let numberMessages = parseInt("msgDel")
@@ -187,10 +186,28 @@ bot.on('message', async (msg) => {
             "Frases Aleatorias De Memes.")
             .addField("!on",
             "Verificar se Estou Online.")
+            .addField("!cargo @user",
+            "Dar Cargo Dono a um Usuario.")
+            .addField("!removecargo @user",
+            "Remover Cargo de Um Usuario.")
         message.channel.send({ embed });
 
 
 }
 
+
+
+let role = message.guild.roles.find("name", "Dono");
+//MENCIONAR USUARIO
+let member = message.mentions.members.first();
+if(message.content.startsWith('!cargo')){
+member.addRole(role).catch(console.error);
+
+}
+//MECIONAR USUARIO
+if(message.content.startsWith('!removecargo')){
+    member.removeRole(role).catch(console.error);
+
+}
 
 });
