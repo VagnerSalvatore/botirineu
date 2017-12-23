@@ -142,10 +142,11 @@ bot.on('message', async (msg) => {
         msgDel = 10
         let numberMessages = parseInt("msgDel")
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-        } else {
+        msg.channel.sendMessage("Deletado:.");    
+    } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-    ;
+    
     
     if(message.content.startsWith("!help")){
     message.channel.send({embed: {
