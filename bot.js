@@ -68,7 +68,7 @@ bot.on('message', async (msg) => {
         message.channel.send(bot.guilds.size)
     }
     if (message.content.startsWith('!invite')) {
-        message.guild.channels.get(guild.id).createInvite().then(invite =>
+        message.guild.channels.get(bot.guild.id).createInvite().then(invite =>
             message.channel.send(invite.url)
         );
     }
@@ -151,7 +151,7 @@ bot.on('message', async (msg) => {
         message.channel.send({
             embed: {
                 color: 3447003,
-                description: "Enviei No Privado"
+                description: "Enviei No Privado!"
             }
         });
 
