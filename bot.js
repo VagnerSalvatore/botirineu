@@ -10,7 +10,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
-    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
 });
 
 // Anti chat
@@ -154,7 +154,7 @@ bot.on('message', async (msg) => {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
 
-    if (cmd == "!help") {
+    if(message.content.startsWith('!help'))
         const embed = new Discord.RichEmbed()
             .setTitle("COMANDOS.")
             .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/23/tumblr_o12aqvW51p1thjuv2o1_500.jpg")
@@ -190,19 +190,6 @@ bot.on('message', async (msg) => {
             "Remover Cargo de Um Usuario.")
         message.channel.send({ embed });
     }
-    }
-    //MENCIONAR USUARIO
-    let member = message.mentions.members.first();
-    if (message.content.startsWith('!cargo')) {
-        member.addRole(role).catch(console.error);
-
-    }
-    //MECIONAR USUARIO
-    if (message.content.startsWith('!removecargo')) {
-        member.removeRole(role).catch(console.error);
-
-    }
-
 
 //DANDO CARGO A USUARIOS
 let role = message.guild.roles.find("name", "Dono");
@@ -217,9 +204,6 @@ let role = message.guild.roles.find("name", "Dono");
     if (message.content.startsWith('!removecargo')) {
         member.removeRole(role).catch(e0a7e467bfc5e6398edd4console.error);
 
-    }
-    if (message.content.startsWith("!level")) {
-        message.reply(`You are currently level ${curLevel}, with ${userPoints} points.`);
     }
 
     //SISTEMA DE PONTOS
