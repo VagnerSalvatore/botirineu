@@ -10,7 +10,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
-    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
 });
 
 // Anti chat
@@ -62,9 +62,9 @@ bot.on('message', async (msg) => {
     }
 
     //KKK
-    if (message.content.startsWith('!bom dia')){
+    if (message.content.startsWith('!bom dia')) {
 
-        message.channel.send("Bom Dia " + ", É o Caralho!"  + message.author.toString());
+        message.channel.send("Bom Dia " + ", É o Caralho!" + message.author.toString());
     }
 
 
@@ -140,10 +140,10 @@ bot.on('message', async (msg) => {
         }
 
         //Ban/Kick
-    
+
 
     }
-            
+
 
     //Deletando Mensagens
     if (cmd == "!delete") {
@@ -155,9 +155,9 @@ bot.on('message', async (msg) => {
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-    
+
     }
-    
+
     if (message.content.startsWith('!help')) {
         const embed = new Discord.RichEmbed()
             .setTitle("COMANDOS.")
@@ -194,23 +194,19 @@ bot.on('message', async (msg) => {
             "Remover Cargo de Um Usuario.")
         message.channel.send({ embed });
 
+    }
+    let role = message.guild.roles.find("name", "Dono");
+    //MENCIONAR USUARIO
+    let member = message.mentions.members.first();
+    if (message.content.startsWith('!cargo')) {
+        member.addRole(role).catch(console.error);
 
-}
+    }
+    //MECIONAR USUARIO
+    if (message.content.startsWith('!removecargo')) {
+        member.removeRole(role).catch(console.error);
 
-
-
-let role = message.guild.roles.find("name", "Dono");
-//MENCIONAR USUARIO
-let member = message.mentions.members.first();
-if(message.content.startsWith('!cargo')){
-member.addRole(role).catch(console.error);
-
-}
-//MECIONAR USUARIO
-if(message.content.startsWith('!removecargo')){
-    member.removeRole(role).catch(console.error);
-
-}
+    }
 
 
 
@@ -225,103 +221,62 @@ if(message.content.startsWith('!removecargo')){
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-    
+
     }
-    
-    if (message.content.startsWith('!help')) {
-        const embed = new Discord.RichEmbed()
-            .setTitle("COMANDOS.")
-            .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/23/tumblr_o12aqvW51p1thjuv2o1_500.jpg")
-            /*
-             * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
-             */
-            .setColor(0x00AE86)
-            .setDescription("Prefixo, !")
-            .setFooter("IrineuBotTOP")
-            .setThumbnail("https://icon-icons.com/icons2/430/PNG/512/commands_42537.png")
-            /*
-             * Takes a Date object, defaults to current date.
-             */
-            .setTimestamp()
-            .setURL("https://irineubot.com.br")
-            .addField("!ping",
-            "Obter Resultado Tempo de Resposta ms.")
-            .addField("!delete",
-            "Deletar Mensagens Do Canal Necessario Cargo Dono.")
-            .addField("!ban/!kick",
-            "Banir ou Kickar Um Usuario Do Servidor Necessario Cargo Dono.")
-            .addField("!botinfo",
-            "Informações do Bot.")
-            .addField("!invite",
-            "Gerar Link De Convite.")
-            .addField("!irineu",
-            "Frases Aleatorias De Memes.")
-            .addField("!on",
-            "Verificar se Estou Online.")
-            .addField("!cargo @user",
-            "Dar Cargo Dono a um Usuario.")
-            .addField("!removecargo @user",
-            "Remover Cargo de Um Usuario.")
-        message.channel.send({ embed });
 
 
-}
+    if (message.member.roles.has(role.id)) {
+        //MENCIONAR USUARIO
+        let member = message.mentions.members.first();
+        if (message.content.startsWith('!cargo')) {
+            member.addRole(role).catch(console.error);
+        }
+    }
+    //MECIONAR USUARIO
+    if (message.content.startsWith('!removecargo')) {
+        member.removeRole(role).catch(e0a7e467bfc5e6398edd4console.error);
 
+    }
+    if (message.content.startsWith("!level")) {
+        message.reply(`You are currently level ${curLevel}, with ${userPoints} points.`);
+    }
 
+    //SISTEMA DE PONTOS
 
-let role = message.guild.roles.find("name", "Dono");
-//MENCIONAR USUARIO
-let member = message.mentions.members.first();
-if(message.content.startsWith('!cargo')){
-member.addRole(role).catch(console.error);
+    const Discord = require("discord.js");
+    const fs = require("fs");
+    const client = new Discord.Client();
 
-}
-//MECIONAR USUARIO
-if(message.content.startsWith('!removecargo')){
-    member.removeRole(role).catch(e0a7e467bfc5e6398edd4console.error);
+    let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
 
-}
+    client.on("message", message => {
+        if (!message.content.startsWith(prefix)) return;
+        if (message.author.bot) return;
 
-if(message.content.startsWith("!level")) {
-    message.reply(`You are currently level ${curLevel}, with ${userPoints} points.`);
-  }
+        if (!points[message.author.id]) points[message.author.id] = {
+            points: 0,
+            level: 0
+        };
+        let userData = points[message.author.id];
+        userData.points++;
 
-//SISTEMA DE PONTOS
+        let curLevel = Math.floor(1.1 * Math.sqrt(userData.points));
+        if (curLevel > userData.level) {
+            // Level up!
+            userData.level = curLevel;
+            message.reply(`Você Subiu Para O Nivel **${curLevel}**! Não é isso irineu?`);
+        }
 
-const Discord = require("discord.js");
-const fs = require("fs");
-const client = new Discord.Client();
+        if (message.content.startsWith(prefix + "level")) {
+            message.reply(`Seu Nivel É ${userData.level}, Com ${userData.points} Pontos.`);
+        }
+        fs.writeFile("./points.json", JSON.stringify(points), (err) => {
+            if (err) console.error(err)
+        });
 
-let points = JSON.parse(fs.readFileSync("./points.json", "utf8"));
+    });
 
-client.on("message", message => {
-  if (!message.content.startsWith(prefix)) return;
-  if (message.author.bot) return;
-
-  if (!points[message.author.id]) points[message.author.id] = {
-    points: 0,
-    level: 0
-  };
-  let userData = points[message.author.id];
-  userData.points++;
-
-  let curLevel = Math.floor(1.1 * Math.sqrt(userData.points));
-  if (curLevel > userData.level) {
-    // Level up!
-    userData.level = curLevel;
-    message.reply(`Você Subiu Para O Nivel **${curLevel}**! Não é isso irineu?`);
-  }
-
-  if (message.content.startsWith(prefix + "level")) {
-    message.reply(`Seu Nivel É ${userData.level}, Com ${userData.points} Pontos.`);
-  }
-  fs.writeFile("./points.json", JSON.stringify(points), (err) => {
-    if (err) console.error(err)
-  });
-
-});
-
-client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
+    client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
 
 
 
