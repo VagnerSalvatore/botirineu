@@ -10,7 +10,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
-    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
 });
 
 // Anti chat
