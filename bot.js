@@ -10,7 +10,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
-    bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
+    bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
 });
 
 // Anti chat
@@ -142,8 +142,6 @@ bot.on('message', async (msg) => {
         //Ban/Kick
 
 
-    }
-
 
     //Deletando Mensagens
     if (cmd == "!delete") {
@@ -156,9 +154,7 @@ bot.on('message', async (msg) => {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
 
-    }
-
-    if (message.content.startsWith('!help')) {
+    if (cmd == "!help") {
         const embed = new Discord.RichEmbed()
             .setTitle("COMANDOS.")
             .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/23/tumblr_o12aqvW51p1thjuv2o1_500.jpg")
@@ -193,9 +189,8 @@ bot.on('message', async (msg) => {
             .addField("!removecargo @user",
             "Remover Cargo de Um Usuario.")
         message.channel.send({ embed });
-
     }
-    let role = message.guild.roles.find("name", "Dono");
+    }
     //MENCIONAR USUARIO
     let member = message.mentions.members.first();
     if (message.content.startsWith('!cargo')) {
@@ -209,22 +204,8 @@ bot.on('message', async (msg) => {
     }
 
 
-
-
-    //Deletando Mensagens
-    if (cmd == "!delete") {
-        let role = message.guild.roles.find("name", "Dono");
-        if (message.member.roles.has(role.id)) {
-            msgDel = 10
-            let numberMessages = parseInt("msgDel")
-            message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
-        } else {
-            return msg.reply("Sem Permissão! :face_palm:.");
-        }
-
-    }
-
-
+//DANDO CARGO A USUARIOS
+let role = message.guild.roles.find("name", "Dono");
     if (message.member.roles.has(role.id)) {
         //MENCIONAR USUARIO
         let member = message.mentions.members.first();
@@ -279,5 +260,6 @@ bot.on('message', async (msg) => {
     client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
 
 
+    }
 
 });
