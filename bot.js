@@ -9,7 +9,7 @@ bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
 
 bot.on('ready', () => {
-    console.log(`BOT LIGADO`);
+    console.log(`IRINEU ON`);
     bot.user.setPresence({ game: { name: `Irineu`, type: 0 } });
 });
 
@@ -74,7 +74,7 @@ bot.on('message', async (msg) => {
         message.channel.send(bot.guilds.size)
     }
     if (message.content.startsWith('!invite')) {
-        message.guild.channels.get(guild.id).createInvite().then(invite =>
+        message.guild.channels.get('393841445376622612').createInvite().then(invite =>
             message.channel.send(invite.url)
         );
     }
