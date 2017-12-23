@@ -145,8 +145,6 @@ bot.on('message', async (msg) => {
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-
-    }
     
     
     if(message.content.startsWith("!help")){
