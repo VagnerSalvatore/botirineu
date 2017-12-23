@@ -144,4 +144,19 @@ bot.on('message', async (msg) => {
         message.channel.fetchMessages({ limit: numberMessages }).then(messages => message.channel.bulkDelete(messages));
 
     }
+    
+    
+    if(message.content.startsWith("!help")){
+    message.channel.send({embed: {
+  color: 3447003,
+  description: "!ping - Testar o tempo de Resposta
+!delete - Deletar Mensagens do Canal Dica:É Necessario Ter Cargo Dono Ou Admin Para Usar
+!ban/!kick - Banir ou chutar usuario do servidor Dica:É Necessario Ter Cargo Dono Ou Admin Para Usar
+!botinfo - Veja As Informações Sobre Mim.
+!invite - Gerar Link De Invite
+!irineu - Frases de Memes Aleatorios
+!on - Ver Se Estou Online"
+}});
+    
+    }
 });
