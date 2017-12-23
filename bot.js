@@ -140,7 +140,9 @@ bot.on('message', async (msg) => {
         }
 
         //Ban/Kick
+    
     }
+            
 
     //Deletando Mensagens
     if (cmd == "!delete") {
@@ -152,14 +154,43 @@ bot.on('message', async (msg) => {
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
+    
     }
-    if (message.content.startsWith("!help")) {
-        message.channel.send({
-            embed: {
-                color: 3447003,
-                description: "Enviei No Privado!"
-            }
-        });
+    
+    if (message.content.startsWith('!help')) {
+        const embed = new Discord.RichEmbed()
+            .setTitle("COMANDOS.")
+            .setAuthor("IrineuBotTop", "http://imageurl.com.br/images/2017/12/23/tumblr_o12aqvW51p1thjuv2o1_500.jpg")
+            /*
+             * Alternatively, use "#00AE86", [0, 174, 134] or an integer number.
+             */
+            .setColor(0x00AE86)
+            .setDescription("Prefixo, !")
+            .setFooter("IrineuBotTOP")
+            .setThumbnail("https://icon-icons.com/icons2/430/PNG/512/commands_42537.png")
+            /*
+             * Takes a Date object, defaults to current date.
+             */
+            .setTimestamp()
+            .setURL("https://irineubot.com.br")
+            .addField("!ping",
+            "Obter Resultado Tempo de Resposta ms.")
+            .addField("!delete",
+            "Deletar Mensagens Do Canal Necessario Cargo Dono.")
+            .addField("!ban/!kick",
+            "Banir ou Kickar Um Usuario Do Servidor Necessario Cargo Dono.")
+            .addField("!botinfo",
+            "Informações do Bot.")
+            .addField("!invite",
+            "Gerar Link De Convite.")
+            .addField("!irineu",
+            "Frases Aleatorias De Memes.")
+            .addField("!on",
+            "Verificar se Estou Online.")
+        message.channel.send({ embed });
 
-    }
+
+}
+
+
 });
