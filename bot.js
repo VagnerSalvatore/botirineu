@@ -7,7 +7,6 @@ const prefix = '!'; //PREFIXO DO BOT.
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
 
-
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
     bot.user.setPresence({ game: { name: `Look At Me!`, type: 0 } });
@@ -29,7 +28,6 @@ bot.on('message', async (msg) => {
     if (cmd == "!on") {
         msg.channel.send("**Claro Que Sim Pô**");
     }
-
     //Bem Vindo
     bot.on("guildMemberAdd", function (member) {
         const WelcomeMsg = new Discord.RichEmbed()
@@ -43,8 +41,7 @@ bot.on('message', async (msg) => {
         member.addRole("393750458432356353");
         channel.send({ embed: WelcomeMsg })
 
-    })
-
+    });
 
     //Down
 
@@ -75,9 +72,10 @@ bot.on('message', async (msg) => {
     }
     if (message.content.startsWith('!invite')) {
         message.guild.channels.get('393841445376622612').createInvite().then(invite =>
-            message.channel.send(invite.url)
+           message.channel.send(invite.url)
         );
-    }
+        }
+    
     if (message.content.startsWith('!botinfo')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Irineubot.com.br")
@@ -124,9 +122,8 @@ bot.on('message', async (msg) => {
             let banMember = msg.guild.member(msg.mentions.users.first());
             msg.guild.member(banMember).ban();
             msg.channel.sendMessage("Membro **banido** com sucesso :call_me:.");
-        } else {
+     } else {
             return msg.reply("Sem Permissão! :face_palm:.");
-        }
     }
 
     if (cmd == "!kick") {
@@ -138,13 +135,12 @@ bot.on('message', async (msg) => {
         } else {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
-
         //Ban/Kick
-
+    }
 
 
     //Deletando Mensagens
-    if (cmd == "!delete") {
+    if(message.content.startsWith('!delete')){
         let role = message.guild.roles.find("name", "Dono");
         if (message.member.roles.has(role.id)) {
             msgDel = 10
@@ -154,7 +150,6 @@ bot.on('message', async (msg) => {
             return msg.reply("Sem Permissão! :face_palm:.");
         }
 
-    
     }
 
 //DANDO CARGO A USUARIOS
@@ -168,7 +163,7 @@ let role = message.guild.roles.find("name", "Dono");
     }
     //MECIONAR USUARIO
     if (message.content.startsWith('!removecargo')) {
-        member.removeRole(role).catch(e0a7e467bfc5e6398edd4console.error);
+        member.removeRole(role).catch(console.error);
 
     }
 
