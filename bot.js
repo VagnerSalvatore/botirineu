@@ -177,9 +177,24 @@ client.on("message", message => {
     if (err) console.error(err)
   });
 
-});
 
 client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
+});
 
-
+//DANDO CARGO A USUARIOS
+    if (message.member.roles.has(role.id)) {
+        //MENCIONAR USUARIO
+        let member = message.mentions.members.first();
+        if (message.content.startsWith('!cargo')) {
+            member.addRole(role).catch(console.error);
+        }
+    }
+    if (message.member.roles.has(role.id)) {
+        //MENCIONAR USUARIO
+        let member = message.mentions.members.first();
+    if (message.content.startsWith('!removecargo')) {
+        member.removeRole(role).catch(console.error);
+    
+    }
+}
 });
