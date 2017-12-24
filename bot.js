@@ -176,10 +176,9 @@ client.on("message", message => {
   fs.writeFile("./points.json", JSON.stringify(points), (err) => {
     if (err) console.error(err)
   });
-
+});
 
 client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
-});
 
 //DANDO CARGO A USUARIOS
     if (message.member.roles.has(role.id)) {
