@@ -1,8 +1,6 @@
 const Discord = require("discord.js");
 const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
-
-
 const prefix = '!'; //PREFIXO DO BOT.
 //Login Do Bot
 bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
@@ -71,6 +69,8 @@ bot.on('message', async (msg) => {
         )
     }
 
+
+
     if (message.content.startsWith('!botinfo')) {
         const embed = new Discord.RichEmbed()
             .setTitle("Irineubot.com.br")
@@ -110,6 +110,11 @@ bot.on('message', async (msg) => {
         message.channel.send(new Date().getTime() - message.createdTimestamp + " ms :ping_pong: pong");
 
     }
+
+    if(message.content.startsWith('!play'))
+    message.channel.send('Para adicionar o bot de musica no servidor acesse o link https://discordapp.com/api/oauth2/authorize?client_id=393931909350293504&permissions=8&scope=bot');
+    
+
 
 //Ban/Kick
 if (cmd == "!ban") {
@@ -196,4 +201,5 @@ client.login("MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA");
     
     }
 }
+
 });
