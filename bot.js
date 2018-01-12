@@ -3,7 +3,7 @@ const bot = new Discord.Client();
 const embed = new Discord.RichEmbed();
 const prefix = '!'; //PREFIXO DO BOT.
 //Login Do Bot
-bot.login('MzkyNzk0MTAzNzcyODcyNzE1.DR8FZg.OJFtzwGysBBCUYrp9MxaXxW2htA');
+bot.login('');
 
 bot.on('ready', () => {
     console.log(`IRINEU ON`);
